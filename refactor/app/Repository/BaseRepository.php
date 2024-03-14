@@ -202,4 +202,14 @@ class BaseRepository
         return true;
     }
 
+    public function setFailResponse($message, $fieldName = null)
+    {
+        $response['status'] = 'fail';
+        $response['message'] = $message;
+        if ($fieldName) {
+            $response['field_name'] = $fieldName;
+        }
+        return $response;
+    }
+
 }
